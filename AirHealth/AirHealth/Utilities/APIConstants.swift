@@ -5,5 +5,8 @@ struct APIConstants {
 
     static let login = "\(baseURL)/auth/login"
     static let appleLogin = "\(baseURL)/auth/apple"
+    static let updateOnboarding = "\(baseURL)/users"
+    static let register = "\(baseURL)/auth/register"
+
 
 }

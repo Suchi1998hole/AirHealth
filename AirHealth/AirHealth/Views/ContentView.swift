@@ -5,10 +5,16 @@ struct ContentView: View {
     @EnvironmentObject var authVM: AuthViewModel
 
     var body: some View {
-        if authVM.isLoggedIn {
-            FeedView()
-        } else {
-            LoginView()
+        Group {
+            if authVM.isLoggedIn {
+                if authVM.needsOnboarding {
+                    OnboardingView()
+                } else {
+                    FeedView()
+                }
+            } else {
+                LoginView()
+            }
         }
     }
 }
